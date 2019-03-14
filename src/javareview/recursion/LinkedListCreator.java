@@ -3,6 +3,7 @@ package javareview.recursion;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javareview.common.Node;
 
 public class LinkedListCreator {
 
@@ -22,6 +23,21 @@ public class LinkedListCreator {
     //    Node headOfSublist = createLinkedList(data.subList(1, data.size()));
     firstNode.setNext(createLinkedList(data.subList(1, data.size())));
     return firstNode;
+  }
+
+  public Node createLargeLinkedList(int size) {
+    Node prev = null;
+    Node head = null;
+    for (int i = 0; i <= size; i++) {
+      Node node = new Node(i);
+      if (prev != null) {
+        prev.setNext(node);
+      } else {
+        head = node;
+      }
+      prev = node;
+    }
+    return head;
   }
 
   public static void main(String[] args) {

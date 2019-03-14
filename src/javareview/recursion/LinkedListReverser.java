@@ -2,6 +2,7 @@ package javareview.recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import javareview.common.Node;
 
 public class LinkedListReverser {
 
