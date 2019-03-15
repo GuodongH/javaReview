@@ -4,13 +4,13 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import javareview.common.Node;
 
-public class LinkedList implements Iterable<Integer> {
+public class LinkedList<T> implements Iterable<T> {
 
-  private Node head;
-  private Node tail;
+  private Node<T> head;
+  private Node<T> tail;
 
-  public static LinkedList createEmptyList() {
-    return new LinkedList();
+  public static <T> LinkedList<T> createEmptyList() {
+    return new LinkedList<T>();
   }
 
   private LinkedList() {
@@ -18,8 +18,8 @@ public class LinkedList implements Iterable<Integer> {
     tail = null;
   }
 
-  public void add(int value) {
-    Node node = new Node(value);
+  public void add(T value) {
+    Node<T> node = new Node<>(value);
     if (tail == null) {
       head = node;
     } else {
@@ -28,10 +28,10 @@ public class LinkedList implements Iterable<Integer> {
     tail = node;
   }
 
-  private class ListIterator implements Iterator<Integer> {
-    private Node currentNode;
+  private class ListIterator implements Iterator<T> {
+    private Node<T> currentNode;
 
-    public ListIterator(Node head) {
+    public ListIterator(Node<T> head) {
       this.currentNode = head;
     }
 
@@ -41,18 +41,18 @@ public class LinkedList implements Iterable<Integer> {
     }
 
     @Override
-    public Integer next() {
+    public T next() {
       if (currentNode == null) {
         throw new NoSuchElementException();
       }
-      int value = currentNode.getValue();
+      T value = currentNode.getValue();
       currentNode = currentNode.getNext();
       return value;
     }
   }
 
   @Override
-  public Iterator<Integer> iterator() {
+  public Iterator<T> iterator() {
     return new ListIterator(head);
   }
 }

@@ -7,7 +7,7 @@ import javareview.recursion.LinkedListCreator;
 
 public class LinkedListDeletor {
 
-  public Node deleteIfEquals(Node head, int value) {
+  public <T> Node<T> deleteIfEquals(Node<T> head, T value) {
     while (head != null && head.getValue() == value) {
       head = head.getNext();
     }
