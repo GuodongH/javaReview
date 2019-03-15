@@ -25,17 +25,16 @@ public class Tester {
     }
     System.out.println();
 
-    //    System.out.println("Testing managers");
-    //    Employee manager = new Manager("Tony", 100000, employees);
-    //    employees.add(manager);
-    //    for (Employee employee : employees) {
-    //      System.out.println(employee);
-    //    }
-    //    System.out.println();
-    //
-    //    System.out.println("Testing doWork");
-    //    System.out.println("Expect exceptions because it tries to" + " load unmodifiable
-    // reporters.");
-    //    manager.doWork();
+    System.out.println("Testing managers");
+    Employee manager = new Manager("Tony", 100000, employees);
+    employees.add(manager);
+    for (Employee employee : employees) {
+      System.out.println(employee);
+    }
+    System.out.println();
+
+    System.out.println("Testing doWork");
+    System.out.println("Expect exceptions because it tries to" + " load unmodifiable reporters.");
+    manager.doWork();
   }
 }
