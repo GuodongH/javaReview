@@ -23,6 +23,9 @@ public class TreeNode {
 
   public void setLeft(TreeNode left) {
     this.left = left;
+    if (this.left != null) {
+      this.left.setParent(this);
+    }
   }
 
   public TreeNode getRight() {
@@ -31,13 +34,16 @@ public class TreeNode {
 
   public void setRight(TreeNode right) {
     this.right = right;
+    if (this.right != null) {
+      this.right.setParent(this);
+    }
   }
 
   public TreeNode getParent() {
     return parent;
   }
 
-  public void setParent(TreeNode parent) {
+  private void setParent(TreeNode parent) {
     this.parent = parent;
   }
 }
