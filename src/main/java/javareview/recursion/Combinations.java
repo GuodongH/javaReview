@@ -6,12 +6,7 @@ import java.util.List;
 
 public class Combinations {
 
-  /**
-   * Generates all combinations and output them, selecting n elements from data.
-   *
-   * @param data
-   * @param n
-   */
+  /** Generates all combinations and output them, selecting n elements from data. */
   public void combinations(List<Integer> selected, List<Integer> data, int n) {
     // initial value for recursion
     // how to select element
